@@ -1,13 +1,14 @@
-package module3;
+package module3.adsWebSite;
 
-/**
- * Created by amudrevskyi on 02.08.2016.
- */
 public class CarAd extends AdEntity {
     private String model;
     private int mileage;
     private String carType;
     private String color;
+
+    public void increasePrice() {
+        setPrice(getPrice() + 1000);
+    }
 
     public String getColor() {
         return color;

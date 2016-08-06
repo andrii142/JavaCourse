@@ -1,4 +1,4 @@
-package module3;
+package module3.adsWebSite;
 
 import java.util.Date;
 
@@ -7,6 +7,20 @@ public class Message {
     private User fromUser;
     private User toUser;
     private String description;
+    private boolean isRead;
+
+    private void changeRecipient(User user) {
+        if (!isRead)
+            toUser = user;
+    }
+
+    private int setDescrSize() {
+        return description.length();
+    }
+
+    public void setRead(boolean read) {
+        isRead = read;
+    }
 
     public String getDescription() {
         return description;
