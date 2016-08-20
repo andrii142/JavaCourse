@@ -2,9 +2,9 @@ package module2.practice;
 
 public class Task3 {
 
-    static double withdrawBalance(double balance, double test, double commission) {
+    static double withdrawBalance(double balance, double withdrawal, double commission) {
        // double commission = 1.5;
-        return balance - test - commission;
+        return balance - withdrawal - commission;
     }
 
     public static void main(String[] args) {
