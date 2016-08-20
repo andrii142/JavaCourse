@@ -1,10 +1,34 @@
 package module2;
 
 public class VariablesExample {
-    int a = 3, b = 4, c = 6;         // Declares three ints, a, b, and c.
 
-    
-    byte B = 22;         // initializes a byte type variable B.
-    double pi = 3.14159; // declares and assigns a value of PI.
-    char P = 'a';        // the char variable a iis initialized with value 'a'
+    public static void main(String[] args) {
+        /* &&
+        true - true  = tree
+        true - false
+        false - true
+        false - false
+         */
+
+        /* ||
+        true - true
+        true - false
+        false - true
+        false - false = false
+         */
+
+        boolean isActive = true;
+        for (int k = 5; k < 10; k++) {
+            System.out.println(k);
+
+        }
+
+        System.out.println("hello");
+
+        if (true) {
+            System.out.println("test");
+        }
+
+
+    }
 }

@@ -1,5 +1,7 @@
 package module1;
 
 public class AnyNameHere {
-    //just example
+    public static void main(String[] args) {
+
+    }
 }

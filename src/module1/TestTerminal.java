@@ -1,7 +1,7 @@
 package module1;
 
-/**
- * Created by amudrevskyi on 16.08.2016.
- */
 public class TestTerminal {
+    public static void main(String[] args) {
+            System.out.println("Test print...");
+    }
 }
