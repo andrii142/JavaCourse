@@ -22,15 +22,18 @@ public class LoopsExample {
         <Block of statements>;
          */
 
-        for (int i = 0; i < 10; i++) {
-            System.out.println("step " + i);
-        }
+        //statement
+        //выражение
 
-        int i = 0;
+        int res;
+
+
+        /*
+
         while (i < 10) {
             System.out.println(i);
             i++;
-        }
+        }*/
 
         //do while example
         int count = 1;
