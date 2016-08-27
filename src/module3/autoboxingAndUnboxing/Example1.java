@@ -1,18 +1,20 @@
 package module3.autoboxingAndUnboxing;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Example1 {
-
     public static void main(String[] args) {
-        List<Integer> li = new ArrayList<>();
-        for (int i = 1; i < 50; i += 2)
-            li.add(i);
+        Integer[] array = new Integer[10];
 
-        //but java do this :
-        //List<Integer> li = new ArrayList<>();
-        //for (int i = 1; i < 50; i += 2)
-        //   li.add(Integer.valueOf(i));
+        //AUTOBOXING
+        //приведение типа к классу обертки
+        for (int i = 0; i < 10; i +=2)
+            array[i] = i;
+
+        // array[i] = Integer.valueOf(i);
+        //int i -> Integer i
+
+
+
+
     }
 }

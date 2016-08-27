@@ -8,24 +8,15 @@ public class User {
 
     private String phone;
 
-    private List<Message> messages;
+    private Message[] messages = new Message[5];
 
-    public User(String firstName, List<Message> messages, String lastName, String phone) {
+    public User(String firstName, Message[] messages, String lastName, String phone) {
         this.firstName = firstName;
         this.messages = messages;
         this.lastName = lastName;
         this.phone = phone;
     }
 
-    public int inboxMessagesCount() {
-        return messages.size();
-    }
-
-    public int inboxMessagesCountFromUser(User user) {
-       //TODO LIVE CODING
-
-        return 0;
-    }
 
     public String getPhone() {
         return phone;
@@ -49,13 +40,5 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
     }
 }

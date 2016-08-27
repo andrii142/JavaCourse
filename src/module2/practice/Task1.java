@@ -33,16 +33,13 @@ public class Task1 {
 
 
     public static void main(String[] args) {
-
         int[] balances = {1200, 250, 2000, 500, 3200};
         String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
-
         int[] balances1 = {200, 200, 500, 4000, 30};
 
 
-        for(String name : getOwnerNames(balances, ownerNames)) {
-            System.out.println(name + " ");
-        }
 
+
+        getOwnerNames(balances, ownerNames);
     }
 }

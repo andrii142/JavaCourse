@@ -5,19 +5,20 @@ import java.util.List;
 
 public class Example2 {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(5);
+        Integer[] array = new Integer[3];
+        array[0] = 1;
+        array[1] = 2;
+        array[2] = 7;
 
-        System.out.println(sumEven(list));
+        System.out.println(sumEven(array));
     }
 
-    private static int sumEven(List<Integer> li) {
+    private static int sumEven(Integer[] li) {
         int sum = 0;
-        for (Integer i : li)
-            if (i % 2 == 0)
-                sum += i;
+        for (Integer item : li)
+            if (item % 2 == 0)
+                //UNBOXING
+                sum += item;
         return sum;
     }
 }

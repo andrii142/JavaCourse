@@ -1,12 +1,10 @@
-package module3.adsWebSite;
+package module3.homework.task2;
 
+/**
+ * Created by Andrey on 8/26/16.
+ */
 public class Main {
-
     public static void main(String[] args) {
         //
-        //User user1 = new User("Jack", "Kop", );
-
-
     }
-
 }
