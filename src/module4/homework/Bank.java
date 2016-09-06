@@ -6,4 +6,6 @@ public abstract class Bank {
     public Currency getCurrency() {
         return currency;
     }
+
+    abstract int getCommission(int summ);
 }
