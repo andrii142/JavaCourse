@@ -8,4 +8,17 @@ public abstract class Bank {
     }
 
     abstract int getCommission(int summ);
+
+    abstract int getLimitOfWithdrawal();
+
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
+
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "currency=" + currency +
+                '}';
+    }
 }

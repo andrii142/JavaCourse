@@ -1,4 +1,4 @@
-package module4.practice;
+package module4.practice.first;
 
 public class Main {
     public static void main(String[] args) {
