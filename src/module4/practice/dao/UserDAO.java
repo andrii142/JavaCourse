@@ -3,8 +3,9 @@ package module4.practice.dao;
 public class UserDAO implements DAO {
     @Override
     public Object save(Object user) {
-        System.out.println(user.toString() + "saved");
-        return user;
+        User user1 = (User) user;
+        System.out.println(user1.toString() + "saved");
+        return user1;
     }
 
     @Override
