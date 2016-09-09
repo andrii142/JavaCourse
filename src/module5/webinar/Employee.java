@@ -1,7 +1,6 @@
 package module5.webinar;
 
-public class Employee
-{
+public class Employee {
     private Integer id;
     private String firstname;
     private String lastName;
@@ -33,7 +32,18 @@ public class Employee
     }
 
     @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
+        //null
         if(o == null)
         {
             return false;
@@ -46,7 +56,8 @@ public class Employee
         {
             return false;
         }
-        Employee e = (Employee) o;
+        //logic
+        Employee e = (Employee) o; //object o casted to object e
         return (this.getId() == e.getId());
     }
 
