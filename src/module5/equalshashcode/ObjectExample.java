@@ -1,4 +1,4 @@
-package module5.webinar.equalshashcode;
+package module5.equalshashcode;
 
 public class ObjectExample {
     public static void main(String[] args) {

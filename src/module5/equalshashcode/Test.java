@@ -1,4 +1,4 @@
-package module5.webinar.equalshashcode;
+package module5.equalshashcode;
 
 /**
  * Created by amudrevskyi on 09.09.2016.

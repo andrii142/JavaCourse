@@ -1,4 +1,4 @@
-package module5.webinar.equalshashcode;
+package module5.equalshashcode;
 
 import java.util.HashSet;
 import java.util.Set;
