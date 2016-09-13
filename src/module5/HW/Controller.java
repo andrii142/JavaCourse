@@ -45,6 +45,12 @@ public class Controller {
 
     }
 
+    Room save(Room room) {
+        DAOHardImpl daoHard = new DAOHardImpl();
+        return daoHard.save(room);
+    }
+
+
 
     Room[] check(API api1, API api2) {
         // api1.findRooms(0, 0, null, null); option 1

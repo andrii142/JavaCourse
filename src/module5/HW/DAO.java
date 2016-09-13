@@ -8,4 +8,6 @@ public interface DAO {
     Room update(Room room);
 
     Room findById(long id);
+
+    Room[] getAll();
 }
