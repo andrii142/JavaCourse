@@ -10,6 +10,7 @@ public class BookingComAPI {
 
     String save(String room) {
         System.out.println(room + "was delted");
+        return "";
     }
 
 
