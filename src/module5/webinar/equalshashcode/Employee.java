@@ -1,4 +1,4 @@
-package module5.equalshashcode;
+package module5.webinar.equalshashcode;
 
 public class Employee {
     private Integer id;

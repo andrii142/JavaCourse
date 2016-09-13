@@ -1,4 +1,4 @@
-package module5.uml;
+package module5.webinar.uml;
 
 public class ClassB {
     private String x;
