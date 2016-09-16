@@ -1,4 +1,4 @@
-package module5.practice_rechun.offline_4;
+package module5.practice;
 
 /**
  * Created by zetokz on 12.09.16.

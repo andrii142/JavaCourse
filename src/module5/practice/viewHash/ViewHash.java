@@ -1,7 +1,8 @@
-package module5.practice_rechun.offline_4.viewHash;
+package module5.practice.viewHash;
 
-import offline_4.Apple;
-import offline_4.View;
+
+import module5.practice.Apple;
+import module5.practice.View;
 
 import java.util.Arrays;
 
