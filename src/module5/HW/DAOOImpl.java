@@ -3,7 +3,8 @@ package module5.HW;
 public class DAOOImpl implements DAO {
     @Override
     public Room save(Room room) {
-        return null;
+        System.out.println(room.toString() + "saved");
+        return room;
     }
 
     @Override

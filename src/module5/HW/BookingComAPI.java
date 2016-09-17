@@ -6,8 +6,9 @@ public class BookingComAPI implements API {
     private Room[] rooms = new Room[5];
 
 
+
     public BookingComAPI() {
-        Room room1 = new Room();
+        Room room1 = new Room(1001, 200);
         rooms[0] = room1;
 
         //do the same for all 5 rooms
@@ -17,8 +18,15 @@ public class BookingComAPI implements API {
         */
     }
 
+    //implentation
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
+
+
+        //check equals
+
+
+        //check hotel
 
 
         //logic - implementations

@@ -7,6 +7,10 @@ public class Room {
     private int price;
     private String city;
 
+    public Room(long id, int price) {
+        this.id = id;
+        this.price = price;
+    }
 
     @Override
     public boolean equals(Object object) {
@@ -15,11 +19,21 @@ public class Room {
 
         Room room = (Room) object;
 
-        if (id != room.id) return false;
-        if (price != room.price) return false;
-        return city.equals(room.city);
+        /*if(id != 0) {
+            if (id != room.id) return false;
+        }*/
+
+        if(price != 0) {
+            if (price != room.price) return false;
+        }
+
+        if(city != null) {
+            if (!city.equals(room.city)) return false;
+        }
 
         //null.methods - as a result nullPointerException
+
+        return true;
     }
 
     @Override
