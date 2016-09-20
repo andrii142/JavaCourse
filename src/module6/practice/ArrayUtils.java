@@ -1,9 +1,6 @@
 package module6.practice;
 
 import java.util.Arrays;
-import java.util.function.IntFunction;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 /**
  * Created by zetokz on 19.09.16.
