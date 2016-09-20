@@ -14,5 +14,6 @@ public class ArrayUtilsMain {
         Order[] ar2 = {order2, order1, order1};
 
         System.out.println(ArrayUtils.check(ar2, ar1).length);
+        System.out.println(ArrayUtils.getActive(ar2));
     }
 }

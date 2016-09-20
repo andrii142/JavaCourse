@@ -1,5 +1,10 @@
 package module6.practice;
 
+import java.util.Arrays;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
 /**
  * Created by zetokz on 19.09.16.
  */
@@ -46,10 +51,17 @@ public class ArrayUtils {
         Order[] ordersActive = new Order[orders.length];
 
         int index = 0;
-        for(Order order : ordersActive) {
-            if(order.isActive() && order.isDone())
+        for (Order order : ordersActive) {
+            if (order.isActive() && order.isDone())
                 ordersActive[index++] = order;
         }
+
+        Order[] activeOrders = Arrays    //construction how we use arrays loop in real life
+                .stream(orders)
+                .filter(order ->
+                        order != null // delete empty
+                                && order.isActive() && order.isDone()) //choose only done and active orders
+                .toArray(Order[]::new);
 
         return deleteEmpty(orders);
     }
