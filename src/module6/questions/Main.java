@@ -11,6 +11,6 @@ public class Main {
 
         controller.makeOrder(user, item);
 
-
+        controller.cancelOrder(user, item);
     }
 }

@@ -7,7 +7,7 @@ public class Main extends DBService {
         //you can chanege logic, but other classes can't
         return object;
     }
-    
+
 
     public static void main(String[] args) {
         User user = new User("Denis", "Kiev", 25);

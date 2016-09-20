@@ -25,6 +25,23 @@ public class Store {
         items[4] = item;
     }
 
+    /*public void makeOrder(User user, Item item) {
+        Order order = new Order(item, user);
+
+        DAOImpl dao = new DAOImpl();
+
+        for(Item storeItem : items) {
+            if(storeItem.getCityStored().equals(item.getCityStored()) &&
+                    storeItem.getName().equals(item.getName())) {
+                orders[Store.getIndex()] = order;
+                dao.save(order);
+                return;
+            }
+        }
+
+        System.out.println("We don't have this item");
+    }*/
+
     public Order[] getOrders() {
         return orders;
     }
