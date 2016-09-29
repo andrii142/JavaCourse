@@ -17,12 +17,6 @@ public abstract class Employee {
 
     //abstract void paySalary();
 
-    //abstract void paySalary();
-
-    //abstract void paySalary();
-
-    //abstract void paySalary();
-
 
 /*    public int getBalance() {
         return balance;

@@ -23,7 +23,10 @@ public class OperatorsExample {
 
         //bitwise operators
 
-        int a = 60;	 /* 60 = 0011 1100 - */
+        //7 / 2 = 3, 7 % 2 = 1
+        //3 / 2 = 1, 3 % 2 = 1
+        //1 / 2 = 0, 1 % 2 = 1
+        int a = 60;	 /* 60 = 0011 1100 */
         int b = 13;	 /* 13 = 0000 1101 - 0000 0110 */
         int c = 0;
 

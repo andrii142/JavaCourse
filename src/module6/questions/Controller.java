@@ -71,6 +71,15 @@ public class Controller {
         System.out.println("We don't have this oders");
     }
 
+    //get all shipped orders
+
+    //get min/max order price
+
+    //get average order price
+
+    //get order cities
+
+
     private int getRevenueFromAllOrders() {
 
 
