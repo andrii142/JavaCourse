@@ -13,8 +13,5 @@ public class HW1 {
             result.add(new ArrayList<>());
             count--;
         }
-
-
-
     }
 }

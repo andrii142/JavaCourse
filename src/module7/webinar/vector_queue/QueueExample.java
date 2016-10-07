@@ -5,23 +5,30 @@ import java.util.Queue;
 
 public class QueueExample {
     public static void main(String[] args) {
-        Queue<String> queue = new PriorityQueue<>();
+        Queue<Integer> queue = new PriorityQueue<>();
 
-        queue.add("item1");
-        queue.add("item2");
-        queue.add("item3");
-        queue.add("item4");
+        queue.add(1100);
+        queue.add(11);
+       // queue.add(0);
+        queue.add(110);
+        queue.add(-30);
+        queue.add(-40);
+        queue.add(-11);
+        queue.add(50);
 
-       // System.out.println(queue.element());
+        //-11 0 11 40 ...
+
+
+        System.out.println(queue.element());
 
       //  queue.remove();
 
       //  System.out.println(queue.element());
 
-        System.out.println(queue.peek());
+        //System.out.println(queue.peek());
 
-        System.out.println(queue.poll());
+       // System.out.println(queue.poll());
 
-        System.out.println(queue.peek());
+       // System.out.println(queue.peek());
     }
 }
