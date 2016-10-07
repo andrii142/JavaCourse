@@ -2,7 +2,7 @@ package module8.generics;
 
 public class GenericMethodExample {
 
-   public static <T> void printArray(T[] inputArray) {
+   private static <T> void printArray(T[] inputArray) {
       for(T element : inputArray) {
          System.out.print(element + " ");
       }

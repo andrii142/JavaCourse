@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class TreeSetExample {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Map<Date, Task> map = new TreeMap<>();
 
         Task task1 = new Task("test something");
@@ -13,7 +13,9 @@ public class TreeSetExample {
         Task task3 = new Task("calulate sum of an");
 
         map.put(new Date(), task2);
+        Thread.sleep(100);
         map.put(new Date(), task1);
+
 
         System.out.println(map);
 

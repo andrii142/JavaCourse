@@ -14,5 +14,11 @@ public class ArrayMerge {
         int[] res = new int[length];
 
         //iterate throuht array and add elements
+
+        Queue<Integer> queue = new PriorityQueue<>();
+        queue.add(11);
+        queue.add(-11);
+        queue.add(0);
+        int a = queue.element();
     }
 }
