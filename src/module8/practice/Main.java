@@ -44,33 +44,45 @@ public class Main {
   public static void main(String[] args) {
   
     Circle circle1 = new Circle(0, 0, 7.5);
-    System.out.println(circle1.getArea());
+    //System.out.println(circle1.getArea());
     
     Circle circle2 = new Circle(0, 0, 6);
-    System.out.println(circle2.getArea());
+    //System.out.println(circle2.getArea());
     
     Circle circle3 = new Circle(0, 0, 7);
-    System.out.println(circle3.getArea());
+    //System.out.println(circle3.getArea());
     
     Square square = new Square(0, 0, 20);
-    System.out.println(square.getArea());
+    //System.out.println(square.getArea());
 
     Rectangle rectangle = new Rectangle(0, 0, 20, 40);
-    System.out.println(rectangle.getArea());
+    //System.out.println(rectangle.getArea());
     
     //=============================================
     // Maximal and minimal area of shapes from list
     System.out.println("===");
-    Group<Shape> group = new Group<>();
-//    Group<Rectangle> group = new Group<>();
-//    Group<Circle> group = new Group<>();
-    group.add(circle1);
-    group.add(circle2);
-    group.add(circle3);
-    group.add(square);
-    group.add(rectangle);
+    Group<Shape> group1 = new Group<>();
+    Group<Shape> group2 = new Group<>();
+    //Group<Circle> group = new Group<>();
+    group1.add(circle1);
+    //group1.add(circle2);
+    //group1.add(circle3);
+    group2.add(square);
+    group2.add(rectangle);
+
+   // System.out.println(group);
+
+   // System.out.println(group.get(3));
+
+    System.out.println(group2);
+
+    group2.addAll(group1);
+
+    System.out.println(group2);
+
+
     
-//    Shape maxArea = ShapeUtil.maxArea(group);
+/*//    Shape maxArea = ShapeUtil.maxArea(group);
     Shape maxArea = group.getMaxArea();
     System.out.println(String.format("Shape with max area: [%s, %s]"
         , maxArea.getClassName(), maxArea.getArea()));
@@ -125,7 +137,7 @@ public class Main {
 //    for (ShapeType shapeType :shapesByType.keySet()) {
 //      System.out.println(shapesByType.get(shapeType));
 //    }
-    
+    */
   }
 
 }

@@ -1,7 +1,6 @@
 package module8.practice;
 
 public class Rectangle extends Shape {
-
   private double hight;
   private double width;
 
