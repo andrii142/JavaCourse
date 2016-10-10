@@ -2,23 +2,25 @@ package module8.practice;
 
 import java.util.*;
 
-public class Group <T extends Shape> implements Iterable<T> {
+public class Group<T extends Shape> implements Iterable<T> {
 
-  private List<T> shapes;
+    private List<T> shapes;
 
-  public Group() {
-    this.shapes = new ArrayList<>();
-  }
+    public Group() {
+        this.shapes = new ArrayList<>();
+    }
 
-  public T get(int index) {
-    return shapes.get(index);
-  }
+    public T get(int index) {
+        return shapes.get(index);
+    }
 
-  public void add(T shape) {
-    this.shapes.add(shape);
-  }
+    public void add(T shape) {
+        //can be good solution
+       // if(shape != null)
+        this.shapes.add(shape);
+    }
 
-  //v0
+    //v0
  /* public void addAll(Group<T> group) {
     Iterator<T> iterator = group.iterator();
     while (iterator.hasNext()) {
@@ -28,7 +30,7 @@ public class Group <T extends Shape> implements Iterable<T> {
   }*/
 
 
-  //v1
+    //v1
   /*public void addAll(Group<T> group) {
     List<T> allShapesInGroup = group.getShapes();
 
@@ -37,76 +39,84 @@ public class Group <T extends Shape> implements Iterable<T> {
     }
   }*/
 
-  //v2
+    //v2
  /* public void addAll(Group<T> group) {
     List<T> allShapesInGroup = group.getShapes();
     shapes.addAll(allShapesInGroup);
   }*/
 
-  //v3
-  public void addAll(Group<T> group) {
-    shapes.addAll(group.getShapes());
-  }
+    //v3
+    public void addAll(Group<T> group) {
+        shapes.addAll(group.getShapes());
+    }
 
-
-
- /* public void addAll(T[] shapes) {
-    for (T shape : shapes) {
+    //v1
+  /*public void addAll(T[] arShapes) {
+    for (T shape : arShapes) {
       add(shape);
     }
-  }
+  }*/
 
-  public void remove(T shape) {
-    this.shapes.remove(shape);
-  }
-
-  public void removeAll(Group<T> shapes) {
-    Iterator<T> inerator = shapes.iterator();
-    while (inerator.hasNext()) {
-      T shape = inerator.next();
-      remove(shape);
+    public void addAll(T[] arShapes) {
+        shapes.addAll(Arrays.asList(arShapes));
     }
-  }
 
-  public void removeAll(T[] shapes) {
-    for (T shape : shapes) {
-      remove(shape);
+    public void remove(T shape) {
+        shapes.remove(shape);
     }
-  }
 
-  public int size() {
-    return shapes.size();
-  }
-
-  public boolean isEmpty() {
-    return shapes.isEmpty();
-  }
-
-  public void clear() {
-    shapes.clear();
-  }
-
-  *//**
-   *  Sum of all shapes area
-   *//*
-  public double getSumArea() {
-    if (shapes.isEmpty()) {
-      return 0;
+    public void removeAll(Group<T> group) {
+        shapes.removeAll(group.getShapes());
     }
-    double result = 0;
-    for (T shape : shapes) {
-      result += shape.getArea();
-    }
-    return result;
-  }
 
-  *//**
-   *  Maximal area of shapes from group
-   *//*
-  public T getMaxArea() {
-    if (shapes.isEmpty()) {
-      return null;
+    public void removeAll(T[] arShapes) {
+        for (T shape : arShapes) {
+            remove(shape);
+        }
     }
+
+    public int size() {
+        return shapes.size();
+    }
+
+    public boolean isEmpty() {
+        return shapes.isEmpty();
+    }
+
+    public void clear() {
+        shapes.clear();
+    }
+
+    public T getMaxArea() {
+        if(shapes.isEmpty()) return null;
+
+        T shapeWithMaxArea = shapes.get(0);
+
+        for (T t : shapes) {
+            if (t.getArea() > shapeWithMaxArea.getArea()) {
+                shapeWithMaxArea = t;
+            }
+        }
+
+        return shapeWithMaxArea;
+    }
+
+    public double getSumArea() {
+        if (shapes.isEmpty()) {
+            return 0;
+        }
+
+        shapes = ShapeUtil.deleteEmpty(shapes);
+
+        double result = 0;
+        for (T shape : shapes) {
+            result += shape.getArea();
+        }
+        return result;
+    }
+
+  /*public T getMaxArea() {
+
     T result = shapes.get(0);
     T element;
     for (int i = 1; i < shapes.size(); i++) {
@@ -116,11 +126,12 @@ public class Group <T extends Shape> implements Iterable<T> {
       }
     }
     return result;
-  }
+  }*/
 
-  *//**
-   *  Minimal area of shapes from group
-   *//*
+
+    /**
+     * Minimal area of shapes from group
+     *//*
   public T getMinArea() {
     if (shapes.isEmpty()) {
       return null;
@@ -137,19 +148,22 @@ public class Group <T extends Shape> implements Iterable<T> {
   }
 
   */
+    @Override
+    public Iterator<T> iterator() {
+        return shapes.iterator();
+    }
 
-  @Override
-  public Iterator<T> iterator() {
-    return shapes.iterator();
-  }
+    public List<T> getShapes() {
+        return shapes;
+    }
 
-  public List<T> getShapes() {
-    return shapes;
-  }
+    public void setShapes(List<T> shapes) {
+        this.shapes = shapes;
+    }
 
-  /**
-   *  Work with Map
-   *//*
+    /**
+     * Work with Map
+     *//*
   public Map<ShapeType, Group<T>> getShapesSeparatedByType() {
     Map<ShapeType, Group<T>> result = new TreeMap<>();
     for (T shape : shapes) {
@@ -190,12 +204,8 @@ public class Group <T extends Shape> implements Iterable<T> {
     }
     return result;
   }*/
-
-
-
-
-  @Override
-  public String toString() {
-    return shapes.toString();
-  }
+    @Override
+    public String toString() {
+        return shapes.toString();
+    }
 }
