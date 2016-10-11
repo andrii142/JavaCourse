@@ -1,4 +1,4 @@
-package module8.maps;
+package module8.webinar.maps;
 
 import java.util.List;
 

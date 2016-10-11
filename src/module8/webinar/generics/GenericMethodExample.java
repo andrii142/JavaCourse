@@ -1,4 +1,4 @@
-package module8.generics;
+package module8.webinar.generics;
 
 public class GenericMethodExample {
 

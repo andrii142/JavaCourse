@@ -1,9 +1,4 @@
-package module8.generics;
-
-import module8.maps.Task;
-
-import java.util.ArrayList;
-import java.util.List;
+package module8.webinar.generics;
 
 public class Main {
     public static void main(String[] args) {

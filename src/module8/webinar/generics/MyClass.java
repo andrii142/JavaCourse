@@ -1,13 +1,15 @@
-package module8.generics;
+package module8.webinar.generics;
 
-public class MyClassWithObject {
+//import java.lang.T;
 
-    Object doSomething(Object t) {
+public class MyClass <T, B> {
+
+    T doSomething(T t) {
         System.out.println("doSomething method is invoked");
         return t;
     }
 
-    Object test(Object b) {
+    B test(B b) {
         System.out.println("test method is invoked");
         return b;
     }
