@@ -3,7 +3,7 @@ package sn;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAOImpl implements DAO {
+public class UserDAOImpl implements UserDAO {
     static List<User> allUsers = new ArrayList<>();
 
 

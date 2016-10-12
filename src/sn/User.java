@@ -1,9 +1,6 @@
 package sn;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class User {
     private long id;
@@ -14,6 +11,8 @@ public class User {
     private Date birthDate;
     private HashSet<User> friends;
 
+    private List<Message> messages;
+
     private boolean isActive;
 
     private Date dateRegistered;
@@ -23,22 +22,23 @@ public class User {
         this.id = (int) Math.random() * 100;
         this.firstName = firstName;
         this.city = city;
+
+        this.friends = new HashSet<>();
+        this.messages = new ArrayList<>();
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", city='" + city + '\'' +
-                ", age=" + age +
-                ", birthDate=" + birthDate +
-                ", friends=" + friends +
-                ", isActive=" + isActive +
-                ", dateRegistered=" + dateRegistered +
-                ", dateLastActive=" + dateLastActive +
-                '}';
+        final StringBuilder sb = new StringBuilder("User{");
+        sb.append("id=").append(id);
+        sb.append(", firstName='").append(firstName).append('\'');
+        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append(", city='").append(city).append('\'');
+        sb.append(", age=").append(age);
+        sb.append(", friends=").append(friends.size());
+        sb.append(", messages=").append(messages.size());
+        sb.append('}');
+        return sb.toString();
     }
 
     public long getId() {
@@ -119,5 +119,9 @@ public class User {
 
     public void setDateLastActive(Date dateLastActive) {
         this.dateLastActive = dateLastActive;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
     }
 }

@@ -2,14 +2,31 @@ package sn;
 
 public class Controller {
 
-    DAO dao = new DAOImpl();
+    UserDAO dao = new UserDAOImpl();
 
     User register(User user) {
         return dao.save(user);
     }
 
-    User addToFriends(User fromUser, User toUser) {
+    void addToFriends(User fromUser, User toUser) {
         fromUser.getFriends().add(toUser);
-        return toUser;
+        toUser.getFriends().add(fromUser);
+    }
+
+    //TODO only registered can send messages and do actions in system
+    //TODO login
+    void sendMessage(User fromUser, User toUser, String msg) {
+        MessageDAO messageDAO = new MessageDAOImp();
+
+        Message message = new Message(fromUser, toUser, msg);
+
+        message.setMsgType(MsgType.OUT);
+        fromUser.getMessages().add(message);
+
+
+        message.setMsgType(MsgType.IN);
+        toUser.getMessages().add(message);
+
+        messageDAO.save(message);
     }
 }

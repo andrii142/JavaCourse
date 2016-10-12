@@ -2,7 +2,7 @@ package sn;
 
 import java.util.List;
 
-public interface DAO {
+public interface UserDAO {
     User save(User user);
 
     List<User> getAll();

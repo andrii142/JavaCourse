@@ -1,16 +1,22 @@
 package module7.HW;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Test {
     public static void main(String[] args) {
+
+        List<String> list = new ArrayList<>();
+        List<Integer> list1 = new ArrayList<>();
+
+        List<String> list2 = new LinkedList<>();
 
         long start = System.currentTimeMillis();
 
         for(int i = 0 ; i < 1000000; i ++) {
-            for(int j = 0 ; j < 1000000; j ++) {
-                int a = i * 10 - 1000 + 200 - 21212;
-
-                int b = i;
-            }
+            list2.add("test");
+            //list1.add(1);
         }
 
         long finish = System.currentTimeMillis();
