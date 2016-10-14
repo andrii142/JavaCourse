@@ -6,7 +6,15 @@ import java.util.function.Supplier;
 
 public class SupplierExample {
     public static void main(String[] args) {
-        //Supplier<Person> supplier1 = () -> new Person();
+        Supplier<Person> personSupplier = new Supplier<Person>() {
+            @Override
+            public Person get() {
+                return null;
+            }
+        };
+
+
+        //Supplier<Person> upplier1 = () -> new Person();
         Supplier<Person> supplier = Person::new;
         Person person = supplier.get();
 

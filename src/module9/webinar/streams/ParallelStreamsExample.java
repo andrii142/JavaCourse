@@ -14,7 +14,6 @@ public class ParallelStreamsExample {
             values.add(uuid.toString());
         }
 
-
         long t0 = System.nanoTime();
 
         long count = values.stream().sorted().count();

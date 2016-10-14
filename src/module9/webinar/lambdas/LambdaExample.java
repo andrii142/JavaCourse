@@ -1,5 +1,7 @@
 package module9.webinar.lambdas;
 
+import module9.webinar.functions.Person;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -40,6 +42,10 @@ public class LambdaExample {
                 return Integer.valueOf(from);
             }
         };
+
+
+        PersonExample<Integer, String, Person> personExample = (a, b) -> new Person(a, b);
+        Person person = personExample.create(100, "test Descroption");
 
 
         Converter<String, Integer, Long> converter = (from, anotherFrom) -> {

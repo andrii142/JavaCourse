@@ -17,6 +17,7 @@ public class StreamsExample<T> {
         stringCollection.add("aaa1");
 
 
+        //stream creation
         stringCollection.stream()
                 //.map(n -> n.toUpperCase())
                 .map(String::toUpperCase)
@@ -26,6 +27,10 @@ public class StreamsExample<T> {
                 //.noneMatch()
                 //.anyMatch(p -> p.equals("aaa1"));
                 .forEach(System.out::println);
+
+
+        //paraller stream creation
+        stringCollection.parallelStream();
 
 
         /*stringCollection.stream()
