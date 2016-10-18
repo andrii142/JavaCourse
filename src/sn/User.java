@@ -1,11 +1,14 @@
 package sn;
 
+import module9.questions.BaseEntity;
+
 import java.util.*;
 
-public class User {
+public class User implements BaseEntity<User>{
     private long id;
     private String firstName;
     private String lastName;
+    private String password;
     private String city;
     private int age;
     private Date birthDate;
@@ -14,6 +17,7 @@ public class User {
     private List<Message> messages;
 
     private boolean isActive;
+    private boolean isLoggedIn;
 
     private Date dateRegistered;
     private Date dateLastActive;
@@ -25,6 +29,12 @@ public class User {
 
         this.friends = new HashSet<>();
         this.messages = new ArrayList<>();
+    }
+
+
+    @Override
+    public User getByid(long id) {
+        return null;
     }
 
     @Override
@@ -85,6 +95,14 @@ public class User {
         return birthDate;
     }
 
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
+    }
+
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
@@ -123,5 +141,17 @@ public class User {
 
     public List<Message> getMessages() {
         return messages;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
     }
 }

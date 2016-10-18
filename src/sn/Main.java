@@ -22,8 +22,8 @@ public class Main {
         controller.sendMessage(user1, user, "Привет!");
         controller.sendMessage(user, user1, "Не пиши мне:)");
 
-        System.out.println(user);
-        System.out.println(user1);
+        //System.out.println(user);
+        //System.out.println(user1);
 
         System.out.println(messageDAO.getAll());
 

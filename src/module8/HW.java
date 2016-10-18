@@ -10,4 +10,6 @@ public class HW<T> {
         list.remove(t);
         return t;
     }
+
+
 }

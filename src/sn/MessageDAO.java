@@ -7,7 +7,7 @@ public interface MessageDAO {
 
     List<Message> getAll();
 
-    Message delete(Message message);
+    void delete(Message message);
 
     void setRead(long id);
 

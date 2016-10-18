@@ -2,7 +2,7 @@ package module9.webinar.streams;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.function.Predicate;
 
 public class StreamsExample<T> {
     public static void main(String[] args) {
@@ -17,15 +17,18 @@ public class StreamsExample<T> {
         stringCollection.add("aaa1");
 
 
+        Predicate<String> stringPredicate = s -> s.length() == 4 && s.contains("a") || s.contains("b");
+
+
         //stream creation
         stringCollection.stream()
                 //.map(n -> n.toUpperCase())
-                .map(String::toUpperCase)
-                .sorted((a, b) -> b.compareTo(a))
-                .filter(s -> s.length() == 4)
+                .sorted(String::compareTo)
+                .filter(stringPredicate)
                 //.allMatch(p -> p.equals("aaa1"))
                 //.noneMatch()
                 //.anyMatch(p -> p.equals("aaa1"));
+                //.map(String::toUpperCase)
                 .forEach(System.out::println);
 
 
@@ -44,8 +47,5 @@ public class StreamsExample<T> {
         //count
 
     }
-
-
-
 
 }

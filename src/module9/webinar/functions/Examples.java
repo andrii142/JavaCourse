@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 public class Examples {
     public static void main(String[] args) {
         //functions example
-        //Function<String, Integer> toInteger = n -> Integer.valueOf(n);
-        Function<String, Integer> toInteger = Integer::valueOf;
+        Function<String, Integer> toInteger = n -> Integer.valueOf(n);
+        Function<String, Integer> toInteger1 = Integer::valueOf; //:: metdod reference -> lamda expression
         //Function<String, String> backToString = toInteger.andThen(String::valueOf);
         toInteger.apply("123");
 
@@ -24,21 +24,21 @@ public class Examples {
 
 
         //example with custom function
-        Function<Person, Job> mapPersonToJob = new Function<Person, Job>() {
+        /*Function<Person, Job> mapPersonToJob = new Function<Person, Job>() {
             public Job apply(Person person) {
                 return new Job(person.getPersonId(), person.getJobDescription());
             }
-        };
+        };*/
+
+        test(toInteger);
 
         //see at the end
         List<Job> jobs = persons.stream()
                 .filter(isAdultMale())
-                .map(mapPersonToJob)
+                .map(p -> new Job(p.getPersonId(), p.getJobDescription()))
                 .collect(Collectors.toList());
 
         System.out.println(jobs);
-
-
     }
 
     //predicate example
@@ -47,9 +47,8 @@ public class Examples {
     }
 
 
-    void test(Function<String, Integer> f) {
+    static void test(Function<String, Integer> f) {
         //logic
-
 
     }
 

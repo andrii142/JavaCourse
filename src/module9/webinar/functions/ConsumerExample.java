@@ -6,9 +6,10 @@ import java.util.function.Consumer;
 
 public class ConsumerExample {
     public static void main(String[] args) {
-        //Consumer<String> consumer1 = (String name) -> printNames(name);
+        //Consumer<String> consumer1 = n -> printNames(n);
         //Consumer<String> consumer = ConsumerExample::printNames;
 
+        //Consumer<String> consumer1 = n -> System.out.println(n);
         Consumer<String> consumer = System.out::println;
 
 

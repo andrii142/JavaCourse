@@ -44,6 +44,7 @@ public class LambdaExample {
         };
 
 
+        //create object with lambda
         PersonExample<Integer, String, Person> personExample = (a, b) -> new Person(a, b);
         Person person = personExample.create(100, "test Descroption");
 
