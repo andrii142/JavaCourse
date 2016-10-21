@@ -19,9 +19,8 @@ public class MessageDAOImp implements MessageDAO {
     }
 
     @Override
-    public Message delete(Message message) {
+    public void delete(Message message) {
         msgs.remove(message);
-        return message;
     }
 
 
