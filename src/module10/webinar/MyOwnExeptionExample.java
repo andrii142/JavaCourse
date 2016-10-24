@@ -1,6 +1,4 @@
-package module10;
-
-import module2.test2.test3.Test;
+package module10.webinar;
 
 public class MyOwnExeptionExample {
     public static void main(String[] args) throws Throwable {

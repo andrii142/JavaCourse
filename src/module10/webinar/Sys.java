@@ -1,4 +1,4 @@
-package module10;
+package module10.webinar;
 
 public class Sys {
     private String name;

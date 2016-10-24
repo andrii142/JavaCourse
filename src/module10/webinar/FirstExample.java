@@ -1,4 +1,4 @@
-package module10;
+package module10.webinar;
 
 import java.util.ArrayList;
 import java.util.List;

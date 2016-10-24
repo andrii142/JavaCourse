@@ -1,6 +1,4 @@
-package module10;
-
-import sn.User;
+package module10.webinar;
 
 public class RuntimeExample {
     public static void main(String[] args) {
