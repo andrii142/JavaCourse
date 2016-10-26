@@ -3,50 +3,67 @@ package module10.practice;
 import java.util.Map;
 
 public class PersonController1 {
-  
-  private static PersonDao personDao = new PersonDaoImpl();
 
-  public String save(Map<String, String> requestParams) throws PersonException {
-    if(!requestParams.containsKey("firstName")) {
-      throw new PersonException("Отсутствует обязательный параметр \"Имя\"");
-    }
-/*
-    if(!requestParams.containsKey("lastName")) {
-      throw new PersonException("Отсутствует обязательный параметр \"Фамилия\"");
-    }
-*/    
-    if(!requestParams.containsKey("email")) {
-      throw new PersonException("Отсутствует обязательный параметр \"Email\"");
-    }
-    final String firstName = requestParams.get("firstName");
-    final String email = requestParams.get("email");
+    private PersonDao personDao = new PersonDaoImpl();
+
+    public String save(Map<String, String> requestParams) throws PersonException {
+        if (!requestParams.containsKey("firstName")) {
+            throw new PersonException("Отсутствует обязательный параметр \"Имя\"");
+        }
+
+
+        if (!requestParams.containsKey("email")) {
+            throw new PersonException("Отсутствует обязательный параметр \"Email\"");
+        }
+
+        final String firstName = checkForNull(requestParams, "firstName");
+        final String email = checkForNull(requestParams, "email");
 //    final String lastName = requestParams.get("lastName");
-    
-    // рекомендую не использовать тернарники, а использовать подобную конструкцию
-    final String lastName;
-    if (requestParams.get("lastName") != null) {
-      lastName = requestParams.get("lastName");
-    } else {
-      lastName = "";
+
+
+        final String lastName = checkForNull(requestParams, "lastName");
+
+       /* //more efficient
+        String lastName1 = requestParams.get("lastName");
+        if (lastName1 == null) lastName1 = "";
+
+        //another option
+        String lastName2 = requestParams.get("lastName") != null ?
+                requestParams.get("lastName") : "";
+*/
+
+        Person person = new Person(firstName, lastName, email);
+
+        personDao.save(person);
+        return person.toString();
     }
 
-    Person person = new Person(firstName, lastName, email);
+    public String findByEmail(Map<String, String> requestParams) throws PersonException {
+        if (!requestParams.containsKey("email")) {
+            throw new PersonException("Отсутствует обязательный параметр \"Email\"");
+        }
+        final String email = checkForNull(requestParams, "email");
 
-    personDao.save(person);
-    return person.toString();
-  }
-  
-  public String findByEmail(Map<String, String> requestParams) throws PersonException {
-    if(!requestParams.containsKey("email")) {
-      throw new PersonException("Отсутствует обязательный параметр \"Email\"");
+        Person person = personDao.findByEmail(email);
+        if (person == null) {
+            throw new PersonException("В базе нет персоны с таким email");
+        }
+        return person.toString();
     }
-    final String email = requestParams.get("email");
 
-    Person person = personDao.findByEmail(email);
-    if(person == null) {
-      throw new PersonException("В базе нет персоны с таким email");
+    private String checkForNull(Map<String, String> requestParams, String param) {
+        String res;
+
+        if (requestParams.get(param) != null) {
+            res = requestParams.get(param);
+        } else {
+            res = "";
+        }
+
+        return res;
     }
-    return person.toString();
-  }
 
+    public PersonDao getPersonDao() {
+        return personDao;
+    }
 }

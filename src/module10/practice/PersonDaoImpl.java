@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PersonDaoImpl implements PersonDao {
   
-  List<Person> persons = new ArrayList<>();
+  private static List<Person> persons = new ArrayList<>();
 
   @Override
   public Person save(Person person) {
@@ -23,4 +23,8 @@ public class PersonDaoImpl implements PersonDao {
     return null;
   }
 
+  @Override
+  public List<Person> get() {
+    return persons;
+  }
 }
