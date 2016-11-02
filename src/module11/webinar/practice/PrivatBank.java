@@ -8,8 +8,7 @@ public class PrivatBank {
   public static void main(String[] args) throws IOException {
 
     URL url = new URL("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5");
-    BufferedReader reader = new BufferedReader(
-        new InputStreamReader(url.openStream()));
+    BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 
     String line;
     StringBuilder stringBuilder = new StringBuilder();
@@ -19,8 +18,10 @@ public class PrivatBank {
     reader.close();
     String result = stringBuilder.toString();
 
+    //JACKSON
+    //
     Writer writer = new BufferedWriter(new OutputStreamWriter(
-        new FileOutputStream("/home/oleg/test/privat.json")));
+            new FileOutputStream("/Users/Andrey/Desktop/privat.json")));
     try {
       writer.write(result);
     } catch (IOException e) {
